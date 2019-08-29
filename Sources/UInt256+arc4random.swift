@@ -2,6 +2,7 @@
 
 import Foundation
 
+@available(iOS 7.0, macOS 10.6, watchOS 2.0, tvOS 10.0, *)
 public func arc4random_uniform<T>(_ upperBound: T) -> T where T: FixedWidthInteger & UnsignedInteger {
     if upperBound == 0 {
         return T.min
@@ -16,6 +17,7 @@ public func arc4random_uniform<T>(_ upperBound: T) -> T where T: FixedWidthInteg
     return result as! T
 }
 
+@available(iOS 7.0, macOS 10.6, watchOS 2.0, tvOS 10.0, *)
 func arc4random_uniform64(_ upperBound: UInt64) -> UInt64 {
     guard upperBound > 0 else {
         return 0
@@ -43,6 +45,7 @@ func arc4random_uniform64(_ upperBound: UInt64) -> UInt64 {
     return result
 }
 
+@available(iOS 7.0, macOS 10.6, watchOS 2.0, tvOS 10.0, *)
 func arc4random_uniform256(_ upperBound: UInt256) -> UInt256 {
     var result: UInt256
     switch upperBound.leadingZeroBitCount {
@@ -62,6 +65,7 @@ func arc4random_uniform256(_ upperBound: UInt256) -> UInt256 {
     return result
 }
 
+@available(iOS 7.0, macOS 10.6, watchOS 2.0, tvOS 10.0, *)
 func arc4random64() -> UInt64 {
     let high: UInt32 = arc4random()
     let low: UInt32 = arc4random()
@@ -69,6 +73,7 @@ func arc4random64() -> UInt64 {
     return result
 }
 
+@available(iOS 7.0, macOS 10.6, watchOS 2.0, tvOS 10.0, *)
 func arc4random256() -> UInt256 {
     return UInt256([arc4random64(), arc4random64(), arc4random64(), arc4random64()])
 }
